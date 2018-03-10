@@ -5,16 +5,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style>
+        .headerRowStyle {
+            background-color:#321d1d;
+            font-family:Arial;
+            font-weight:bold;
+            color:white;                    
+        }
+        .rowStyle {
+            background-color:white;
+            font-family:Arial;
+            color:#07176f;
+        }
+         .alternatingRowStyle {
+            background-color:#c8d9db;
+            font-family:Arial;
+            color:#07176f;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
             <asp:Label  ID="lblMessage" Font-Bold="true" ForeColor="Red" Visible="true" runat="server" />
             <asp:GridView runat="server" ID="gvStudents" AutoGenerateColumns="false" OnRowCommand="gvStudents_RowCommand" OnRowEditing="gvStudents_RowEditing" OnRowCancelingEdit="gvStudents_RowCancelingEdit" OnRowUpdating="gvStudents_RowUpdating" OnRowUpdated="gvStudents_RowUpdated">
-                <HeaderStyle BackColor="Brown" ForeColor="White" Font-Names="Arial" Font-Size="12px" Font-Bold="true"/>        
-                <RowStyle BackColor="White" ForeColor="Black" Font-Names="Arial" Font-Size="12px"/>                  
-                
-                <AlternatingRowStyle BackColor="#99ccff" ForeColor="Black" Font-Names="Arial" Font-Size="12px"/>            
+                <HeaderStyle CssClass ="headerRowStyle"/>        
+                <RowStyle CssClass="rowStyle"/>                                  
+                <AlternatingRowStyle CssClass="alternatingRowStyle"/>            
                 <Columns>
                     <asp:TemplateField>                             
                         <HeaderTemplate>
